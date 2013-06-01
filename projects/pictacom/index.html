@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pictacom</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap -->
+		<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+		<style>
+		
+		body {
+			margin-top: 3em;
+		}
+		
+		#sidebar {
+			background: #ffffff; /* Old browsers */
+			background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* IE10+ */
+			background: linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+
+		}
+
+		#input-area {
+			-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+			-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+			box-sizing: border-box;         /* Opera/IE 8+ */
+			
+			width: 100%;
+			height: 30em;
+		}
+
+		#rendered-content {
+			font-size: 6em;
+		}
+
+		#rendered-content img {
+			height: 1em;
+			display: inline;
+		}
+		
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="span3" id="sidebar">
+					<h1>Pictacom</h2>
+					<div class="lead">
+					talk in pictures
+					</div>
+
+					<textarea id="input-area">type stuff in on the left!</textarea>
+				</div>
+				<div class="span9">
+					<div id="rendered-content">
+						<h2> Type some stuff on the left! </h2>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+		<script>
+
+		var contentdiv = $('#rendered-content');
+		var inputarea = $('#input-area');
+		
+		function rerender() {
+			contentdiv.html(render(inputarea.val()));
+		}
+
+		function escape(text) {
+			return text
+			.replace(/&/g, '&amp;')
+			.replace(/>/g, '&gt;')
+			.replace(/</g, '&lt;')
+			.replace(/"/g, '&quot;');
+		}
+		
+		function render(text) {
+			text = escape(text);
+			text = text.replace(/[a-zA-Z]+(?=[^a-zA-Z])/g, function(word){
+				var img = imgforword(word);
+				if (!img) return word;
+				return '<img src="' + img + '"/>';
+			});
+			return text;
+		}
+		
+		var _blacklist = [
+			"a", "an", "am", "is", "are",
+			"it", "it's", "of", "s",
+			"with", "the", "and", "that",
+			'least', 'probably', 'on'
+		]
+		
+		var blacklist = {}
+		_blacklist.forEach(function(word){blacklist[word] = true;});
+		var wordimgcache = {}
+
+		function imgforword(word) {
+			word = word.toLowerCase();
+
+			var cached = wordimgcache[word];
+			if (cached !== undefined) return cached;
+
+			if (!blacklist[word]) {
+				wordimgcache[word] = null;
+				bing(word, function(img){
+					wordimgcache[word] = img;
+					rerender();
+				});
+			}
+			return undefined;
+		}
+
+		function bing(text, callback){
+			$.ajax({
+            	type: 'GET',
+            	url: 'https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=%27'+ 
+            			text + '%27&$top=1&$format=JSON',
+            	dataType: "json", 
+            	context: this,
+            	beforeSend: function(xhr){
+            	    //base64 encoded: ignore:key
+            	    xhr.setRequestHeader('Authorization', 'Basic OjN4bHk4eUQranZVUTZiMkUrei8rWHVscCtRMVk0SzNOU2Q4Vm1TYzZpTE09');
+            	},
+	            success: function(data,status){
+	            	try {
+	            		var imgsrc = data['d']['results'][0]['MediaUrl'];
+		            	callback(imgsrc);
+	            	} catch(e){}
+	            }
+        	});
+		}
+
+		inputarea.bind('input propertychange', rerender);
+		rerender();
+
+		</script>
+	</body>
+</html>

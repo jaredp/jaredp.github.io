@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jared Pochtar</title>
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+
+<style>
+
+a {
+	color: blue;
+	text-decoration: none;
+}
+
+.section {
+	margin: 0px;
+	padding: 0px;
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+h1 {
+	font-size: 3.5em;
+}
+
+h2 {
+	margin-bottom: 0;
+	font-size: 2em;
+}
+
+h3 {
+	margin-top: 0;
+	
+	font-weight: normal;
+}
+/*
+.container {
+	width: 840px;
+}
+
+#normalwidth {
+	width: 840px;
+	margin-left: auto;
+	margin-right: auto;
+}
+*/
+	
+.extlink {
+	color: red !important;
+}
+
+.extlink:before {
+	content: "(";
+}
+
+.extlink:after {
+	content: ")";
+}
+
+h2 a {
+	color: inherit;
+}
+
+.app-screenshot {
+	max-height: 21em;
+	overflow: hidden;
+}
+
+.screenshot-container {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.screenshot-container > div > h2 {
+	margin-top: 0;
+}
+
+#header {
+	background-image: url('assets/propic.png');
+	background-repeat: no-repeat;
+	background-position: left;
+	
+	padding-top: 5em;
+	padding-bottom: 2em;
+
+	text-align: right;
+}
+
+#header table {
+	float: right;
+}
+
+#header table tr td:nth-child(2) {
+	text-align: left;
+	padding-left: 10px;
+}
+
+.topbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.topbar + .section {
+	margin-top: 12em;
+}
+
+.bottombar {
+	background-color: black;
+	text-align: center;
+	color: #444;
+	
+	padding: 0.5em;
+	clear: both;
+}
+
+.hero + .section {
+	padding-top: 0;
+}
+
+
+.left-headed-table td {
+	padding-left: 0;
+}
+
+.printonly {
+	display: none;
+}
+
+@media print {
+	.noprint {
+		display: none;
+	}
+	
+	.printonly {
+		display: inherit;
+	}
+	
+	.extlink {
+		display: none;
+	}
+	
+	#printheader {
+		text-align: center;
+		padding-bottom: 1em;
+	}
+	
+	body {
+		font-size: 12pt;
+		color: black !important;
+	}
+	
+	h1 {
+		font-size: 1.5em;
+	}
+	
+	h2 {
+		font-size: 1.3em;
+	}
+	
+	.lead {
+		font-size: 1.1em;
+		margin-bottom: 0;
+	}
+	
+	.well {
+		border: none;
+		box-shadow: none;
+	}
+	
+	hr {
+		margin: 0;
+	}
+	
+	.unit, .screenshot-container {
+		page-break-inside: avoid;
+	}
+}
+
+/* alt: with images
+
+@media print {
+	#printheader {
+		text-align: center;
+		padding-bottom: 1em;
+	}
+ 
+	body {
+		font-size: 0.8em;
+	}
+ 
+	.lead {
+		font-size: 1.5em;
+		margin-bottom: 0;
+	}
+	.screenshot-container {
+		page-break-inside: avoid;
+	}
+}
+
+*/
+
+@media print {
+	#Apps {
+		float: left;
+	}
+	
+	#Games {
+		float: right;
+	}
+	
+	.print-as-column {
+		width: 49%;
+	}
+	
+	.print-as-column .container,
+	.print-as-column .span6
+	{
+		width: 100%;
+	}
+	
+	.app-screenshot {
+		display: none !important;
+	}
+	
+	.screenshot-container {
+		margin: 0;
+	}
+	
+	.section {
+		padding: 0;
+	}
+}
+
+/* uncomment for appropriate padding with responsive
+@media (min-width: 976px) {
+*/
+	.navbar-fixed-top + div {
+		padding-top: 5em;
+	}
+/*
+}
+*/
+
+</style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="10">
+
+<div class="printonly" id="printheader">
+	<h1>Jared Pochtar</h1>
+	jpochtar@gmail.com
+</div>
+
+<div class="navbar navbar-inverse navbar-fixed-top noprint" id="navbar">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="brand" href="#">Jared Pochtar</a>
+			<ul class="nav">
+				<li><a href="#Education">Education</a></li>
+				<li><a href="#Research">Research</a></li>
+				<li><a href="#Apps">Apps</a></li>
+				<li><a href="#Games">Games</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="hero noprint">
+	<div class="container">
+		<div class="hero-unit" id="header">
+			<h1>Jared Pochtar</h1>
+			<table>
+			<tr>
+				<td>
+					<a href="mailto:jpoctar@gmail.com">
+					jpochtar@gmail.com
+					</a>
+				</td><td>
+					(917) 846-1035
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="https://github.com/jaredp">
+					jaredp on GitHub
+					</a>
+				</td><td>
+					<a href="http://stackoverflow.com/users/257261/jared-pochtar"> 
+					StackOverflow
+					</a>
+				</td>
+			</tr>
+		</table>
+		<br style="clear:both" />
+		</div>
+	</div>
+</div>
+
+<div class="section" id="Education">
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span6">
+				<div class="unit">
+					<h2>Hunter College High School</h2>
+					<p>Class of 2013</p>
+				</div>
+
+				<div class="unit">
+					<h2>Columbia University</h2>
+					<table class="table table-condensed left-headed-table">
+						<col width="25%" />
+						<col width="69%" />
+						<col width="16%" />
+						
+						<tr>
+							<td>Spring 2013</td>
+							<td>Teaching Assistant - Programming Languages and Translators</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>Independent Research in Compilers</td>
+							<td></td>
+						</tr>
+
+						<tr>
+							<td>Fall 2012</td>
+							<td>Advanced Topics in Programming Languages and Compilers</td>
+							<td>A</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>Advanced Software Engineering</td>
+							<td>A</td>
+						</tr>
+
+						<tr>
+							<td></td>
+							<td>Independent Research in Compilers</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>Teaching Assistant - Programming Languages and Translators</td>
+							<td></td>
+						</tr>
+
+						<tr>
+							<td>Summer 2012</td>
+							<td>Independent Research in Compilers</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Spring 2012</td>
+							<td>Independent Research in Compilers</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Fall 2011</td>
+							<td>Programming Languages and Translators</td>
+							<td>A+</td>
+						</tr>
+
+					</table>
+				</div>
+				<div class="unit">
+					<h2>Carnegie Mellon University</h2>
+					<table class="table table-condensed left-headed-table">
+						<col width="25%" />
+						<col width="69%" />
+						<col width="16%" />
+						
+						<tr>
+							<td>Summer 2011</td>
+							<td>Concepts of Mathematics</td>
+							<td>A</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>Principles of Economics</td>
+							<td>A</td>
+						</tr>
+					</table>
+				</div>
+				<div class="unit">
+					<h2>Hunter College</h2>
+					<table class="table table-condensed left-headed-table">
+						<col width="25%" />
+						<col width="69%" />
+						<col width="16%" />
+						
+						<tr>
+							<td>Fall 2010</td>
+							<td>Teaching Assistant - Software Analysis and Design</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>Computer Architecture III</td>
+							<td>A</td>
+						</tr>
+						<tr>
+							<td>Spring 2010</td>
+							<td>Computer Architecture II</td>
+							<td>A</td>
+						</tr>
+						<tr>
+							<td>Fall 2009</td>
+							<td/>Software Analysis and Design II</td>
+							<td>A+</td>
+						</tr>
+					</table>
+				</div>
+
+				<div class="unit">
+					<h2>Employment</h2>
+					<h4>
+						<a href="http://cs.columbia.edu">
+						Columbia University
+						</a>
+						<small>2012 - present</small>
+					</h4>
+					Researcher, Teaching Assistant: hold office hours and grade graduate students' homework and tests
+					
+					<h4>
+						<a href="http://crankuptheamps.com">
+						60East Technologies 
+						</a>
+						<small>2012 - present</small>
+					</h4>
+					Programmer of JIT compiler for SQL-like filter engine for low-latency PubSub system
+				</div>
+
+				<div class="unit">
+					<h2>Standardized Testing</h2>
+					<div>
+					ACT Combined: 35 		<br>
+					SAT II Math 2: 800 		<br>
+					SAT II Physics: 790		<br>
+					AP Computer Science: 5	<br>
+					Commended Student in the 2012 National Merit Scholarship Program
+					</div>
+				</div>
+
+			</div>
+
+			<div class="span6">
+				<div class="unit">
+				<h4>
+				Computer Programming
+				<small>2004 - present</small>
+				</h4>
+				Objective-C/Cocoa, Python/Django	<br />
+				C/C++, Haskell, OCaml, Java			<br />
+				HTML/CSS/JavaScript, PHP, MySQL		<br />
+				MIPS/ARM, Bash, Visual Basic
+				</div>
+
+				<div class="unit">
+				<h4>
+				Graduate-level research at Columbia University
+				<small>Spring 2012 - present</small>
+				</h4>
+				Research in compiling functional intermediate representations to hardware in collaboration with Professor Stephen Edwards.  The first paper from this research is "Compiling Away Recursion for Hardware."
+				</div>
+
+				<div class="unit">
+				<h4>
+				Hunter College High School Devclub
+				<small>2011 - present</small>
+				</h4>
+				President/Founder of Hunter's programming club, where we discuss and collaborate on our projects
+				</div>
+
+				<div class="unit">
+				<h4>
+				Teacher: Hunter Elementary School Computer Programming Elective
+				<small>Fall 2012 - present</small>
+				</h4>
+				Developer and teacher of programming class for 4th through 6th graders
+				</div>
+
+				<div class="unit">
+				<h4>
+				"What's What" (Hunter's school newspaper)
+				<small>2012 - present</small>
+				</h4>
+				Technology Columnist
+				</div>
+
+				<div class="unit">
+				<h4>
+				Hunter College High School Seminar on Washington In Action
+				<small>11th grade</small>
+				</h4>
+				Exclusive group of top social studies students
+				</div>
+
+				<div class="unit">
+				<h4>Appeal of Conscience Foundation
+				<small>Fall 2011</small>
+				</h4>
+				Conducted research for Rabbi Arthur Schneier on interfaith dialogues for his organization to promote religious tolerance worldwide
+				</div>
+
+				<div class="unit">
+				<h4>
+					<a href="http://jpobjc.wordpress.com">
+					Programming/Research Blog
+					</a>
+					<small>2010 - present</small>
+				</h4>
+				Write essays on interesting nuances of and new techniques for programming
+				</div>
+
+				<div class="unit">
+				<h4>Judicial Intern for Hon. George J. Silver, Supreme Court of the State of New York 
+				<small>Summer 2010</small>
+				</h4>
+				Observed trials, took notes and discussed testimony.
+				</div>
+
+				<div class="unit">
+				<h4>
+				Intel Academic Community Parallel Universe Boot-Camp
+				<small>Summer 2009</small>
+				</h4>
+				Youngest student invited to lecture series on parallel programming by Intel and Bank of America
+				</div>
+
+				<div class="unit">
+				<h4>
+				Hunter College Teaching Assistant for CSCI135
+				<small>Fall 2010</small>
+				</h4>
+				Lectured and graded homeworks
+				</div>
+				
+				<div class="unit">
+				<h4>
+				Eighth grade guest teacher
+				<small>2011 - 2012</small>
+				</h4>
+				Teach eighth grade math class computer science as it relates to their curriculum.
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="section" id="Research">
+	<div class="container">
+		<h1>Research / Languages</h1>
+		<hr />
+		
+		<div class="lead">
+		I've always had an interest in languages &mdash; I like making tools, and what better tools to make than ones I can use everyday?
+		</div>
+
+		<div class="unit">
+			<h2>
+				<a href="assets/2013-pepm-recursion.pdf">
+				Research Paper: Compiling Away Recursion for Hardware
+				</a>
+			</h2>
+			<div class="row-fluid">
+				<div class="span4">
+					<p>
+					with research advisor <a href="http://www.cs.columbia.edu/~sedwards">Professor Stephen Edwards</a>
+					</p>
+					<p>
+					Submitted to <a href="http://www.program-transformation.org/PEPM13">ACM SIGPLAN 2013 Workshop on Partial Evaluation and Program Manipulation (PEPM'13)</a>
+					</p>
+				</div>
+				<div class="span8">
+				<p>
+				To provide a superior way of coding, compiling, and optimizing parallel algorithms, we are developing techniques for synthesizing hardware from functional specifications. Recursion, fundamental to functional languages, does not translate naturally to hardware, but tail recursion is iteration and easily implemented as a finite-state machine. In this paper, we show how to translate general recursion into tail recursion with an explicit stack that can be implemented in hardware. We give examples, describe the algorithm, and argue for its correctness. We also present experimental results that demonstrate the method is effective.
+				</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="unit">
+			<h2>
+				<a href="https://github.com/jaredp/PythonCompiler">				
+				The P3 Compiler: Compiling Python to C++ to remove overhead
+				</a>
+			</h2>
+
+			<div class="row-fluid">
+				<div class="span4">
+					as the final project for COMS6998 Advanced Topics in Programming Languages and Compilers with <a href="http://www.cs.columbia.edu/~aho">Professor Alfred Aho</a>
+					<br/><br />
+					<a href="https://github.com/jaredp/PythonCompiler">				
+					Project Home and Source Code (GitHub)
+					</a>
+					<br /><br />
+					<a href="http://www.cs.columbia.edu/~aho/cs6998/reports/12-12-11_Pochtar_P3Compiler.pdf">
+					Paper (pdf)
+					</a>
+				</div>
+
+				<div class="span8">
+				<p>
+		We aim to compile and optimize any Python code faithfully.  To do this, we make one 
+		critical assumption: that we can assume that we have the entire code, and that no new code can 
+		be loaded at runtime.  Without this assumption, we could optimize very little as runtime-loaded code could modify the program in ways which the compiler would need to prove impossible in order to make certain optimizations.  With this assumption, we can use whole code analysis 
+		to prove facts about the source code which allow us to perform certain overhead-removing optimizations.  Thus, we hope to compile most common-case Python code to native C++ mechanisms for maximal performance, and leverage CPython as a fallback to maintain semantic equivalency with CPython.  Currently, P3 yields a 2.7x speedup over CPython.
+				</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row-fluid">
+			<div class="span7">
+				<h2>revenge-of-the-table</h2>
+				<p>
+				Project for Programming Languages and Translators
+				</p>
+				<p>
+				Revenge-of-the-table is a language designed to ease the use and manipulation of relational databases by allowing the programmer to view them in the object-oriented paradigm.  This is accomplished by compiling La Mesa code into Java code, with the appropriate SQL API calls, that will automatically translate object-oriented data structures into tables that can be stored in the database.  Similarly, the language will be able to query the database in a more natural way by allowing programmers to search for objects that meet certain criteria rather than manually querying across numerous tables to find a desired data point. This will allow programmers to forget the implementation details for storing their data in a relational database and permit them to focus on doing interesting things with the data.
+				</p>
+			</div>
+
+			<div class="span5">
+				<h2>ast-pp</h2>
+				<p>
+				Ast-pp generates code for printing types defined in that OCaml file.  In Haskell, the type system permits a polymorphic function for converting objects to strings.  However in OCaml, this is not possible.  OCaml should, in my opinion, provide some built in facility, whether through automatic code generation or language-level mechanism, to print data structures, as this is essential for debugging programs.  Ast-pp remedies this omission by generating the code programmers would otherwise spend time writing to print data structures.  I wrote it to accelerate my work on revenge-of-the-table.
+				</p>
+			</div>
+		</div>
+
+		<div class="row-fluid">
+			<div class="span6">
+				<h2>
+					<a href="http://jpobjc.wordpress.com/2010/09/01/call-a-any-super-classs-implementation-of-any-method/">
+					SuperMessenger
+					</a>
+				</h2>
+				<p>
+				In Objective-C, you can only call an overridden implementation of a method from an immediate subclass of that method's class.  This works well to provide encapsulation, and based on the way super is handled, a super method implementation cannot be called from any but the immediate superclass (inheritance notwithstanding).  This is a good thing, as it would break large bits of encapsulation if subclasses could call arbitrary super implementations, or worse, if other objects could call super implementations of methods on foreign objects.
+				</p>
+			</div>
+			
+			<div class="span6">
+				<h2>
+					<a href="http://jpobjc.wordpress.com/2010/09/06/c-switch-for-non-integers/">
+					JPObjectSwitch
+					</a>
+				</h2>
+				<p>
+				In C, and thus Objective-C, a switch statement only works with integers, and the case labels all need to be constant.  Strings seem like a natural thing to switch on, especially for command line interfaces.  Unfortunately, they cannot be reduced to integer constants, so we cannot use them.  Now that we have blocks in the language, we can create a dictionary where we associate any object, such as an NSString, with a block, and call the selected block after a simple dictionary lookup.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="section print-as-column" id="Apps">
+	<div class="container">
+		<h1>Apps</h1>
+		<hr />
+
+		<div class="row-fluid screenshot-container">
+			<div class="span6">
+				<h2>PurplePoster</h2>
+				<div class="lead">
+				Film shoot tracker
+				</div>
+				<p>
+				My project for COMS4156 with Abhas Bodas, Maria Taku, and Suhan Canaran.  PurplePoster is a web application for sharing the (often purple) posters around New York that indicate something is filming on a particular corner on a particular day.  The mobile-optimized site leverages smartphones' GPS to make submitting a poster as easy as filling out the name of the project and the day it's filming on.  Users can then share the filming information on facebook or twitter.  Users can also set up email alerts for particular movies, actors, or neighborhoods.
+				</p>
+			</div>
+			<div class="span6 app-screenshot">
+				<img src="assets/PurplePosterScreenshot.png" />
+			</div>
+		</div>
+		
+		<div class="row-fluid screenshot-container">
+			<div class="span6">
+				<h2>BetterBoard</h2>
+				<div class="lead">
+				course management system
+				</div>
+				<p>
+				BetterBoard is a Blackboard competitor that grew out of the usability and design failures of Blackboard.  Posting a new assignment is absurdly complicated in Blackboard, as is receiving and grading assignments.  Blackboard uses an over-engineered system of folders for posts, which is nothing but confusing for students and teachers alike.  BetterBoard was made to be the opposite of Blackboard: highly usable through a radically simplified design.  It takes only two clicks to post new assignments for teachers, and no clicks for students to see all of their homework in one place.
+				</p>
+			</div>
+			<div class="span6 app-screenshot">
+				<img src="assets/BetterBoardScreenshot.png" />
+			</div>
+		</div>
+		
+		<div class="row-fluid screenshot-container">
+			<div class="span6">
+				<h2>Prometheus</h2>
+				<div class="lead">
+				iPad app for writing and running programs on device
+				</div>
+				<p>
+				Officially, iPhone and iPad apps can only be made on a Mac.  I wanted to program my iPad from my iPad, so I made this app.  It can run Objective-C-like code and interact with the iOS's Cocoa framework through an interpreter I wrote for the app.  I made this before I took compilers, so I had to derive my own parser and interpreter in Objective-C.
+				</p>
+			</div>
+			<div class="span6 app-screenshot">
+				<img src="assets/PrometheusScreenshot.png" />
+			</div>
+		</div>
+
+		<div class="row-fluid screenshot-container">
+			<div class="span6">
+				<h2>Notecards</h2>
+				<div class="lead">
+				Mac App leveraging Siri for note-taking on sources for research papers
+				</div>
+				<p>
+				Notecards keeps track of tidbits of information, and their source.  Notes can be dictated to from an iPhone through Siri, so you never have to take your hands off of that great source.  You can see an overview of your notes and while read the entirety of one, much like the interface on Apple's Mail.app on the Mac.
+				</p>
+			</div>
+			<div class="span6 app-screenshot">
+				<img src="assets/NotecardsScreenshot.png" />
+			</div>
+		</div>
+				
+		<div class="row-fluid screenshot-container">
+			<div class="span6">
+				<h2>Flashcards</h2>
+				<p>
+				Flashcards is a simple app for memorizing Spanish/English word pairs.  With one tap, a new Spanish word comes up, and with another, the English translation appears below it.  I made this app to as an early demonstration on programming to Devclub
+				</p>
+			</div>
+			<div class="span6 app-screenshot">
+				<img src="assets/FlashcardsAppScreenshot.png" />
+			</div>
+		</div>
+		<!---
+		<div class="row-fluid screenshot-container">
+			<div class="span6">
+				<h2>Phonenumbers</h2>
+				<div class="lead">
+				looks up English word spellings of phone numbers
+				</div>
+				<p>
+				inspired by the Colbert Report's 1-800-OOPS-JEW, 1-800-MOPS-KEY, and 1-800-MOSS-LEW.
+				</p>
+			</div>
+			<div class="span6 app-screenshot">
+				<img src="assets/PhonenumbersScreenshot.png" />
+			</div>
+		</div>
+		-->
+	</div>
+</div>
+<div class="section print-as-column" id="Games">
+	<div class="container">
+		<h1>Games</h1>
+		<hr />
+
+		<div class="row-fluid screenshot-container">
+			<div class="span6">
+				<h2>The Great Gatsby Game</h2>
+				<div class="lead">
+					A multiplayer, multi-iPhone iPad game based on <u>The Great Gatsby</u>
+				</div>
+				<p>
+					A game like Monopoly, this interpretation of <u>The Great Gatsby</u> for an 11th grade English class takes place over an iPad and several iPhones.  The board and current state of the game is displayed on the iPad, while each player's iPhone shows the items and money they have in the game.  The board on the iPad is a multi-touch, interactive map.  
+				</p>
+			</div>
+		</div>
+
+		<div class="row-fluid screenshot-container">
+			<div class="span6">
+				<h2>Hutchinson</h2>
+				<div class="lead">
+				An illustrated text based game for the iPad
+				</div>
+			</div>
+			<div class="span6 app-screenshot">
+				<img src="assets/HutchinsonGameScreenshot.png" />
+			</div>
+		</div>
+
+		<div class="row-fluid screenshot-container">
+			<div class="span6">
+				<h2>The Odyssey Game</h2>
+				<div class="lead">
+					A text based game based on <u>The Odyssey</u> for a 10th grade English class
+				</div>
+				<p>
+				In the game, <u>The Odyssey</u> is partially read by the computer, and partially controlled by you, the player.  You type in to the game what you want Telemachus or Odysseus to say, think, or do, and the narrative continues as if they had done so.  Although the artistic goal of the project was to show that in the Odyssey, the characters have no free will, and thus end up in the same situation at the end of each book regardless of their choices, your different choices make the story progress in different ways.
+				</p>
+			</div>
+			<div class="span6 app-screenshot">
+				<img src="assets/TextbasedGameScreenshot.png" />
+			</div>
+		</div>
+		
+		<div class="row-fluid screenshot-container">
+			<div class="span6">
+				<h2>Snake</h2>
+				<div class="lead">
+				An implementation of the classic Snake game for Mac OS X
+				</div>
+			</div>
+			<div class="span6 app-screenshot">
+				<img src="assets/SnakeGameScreenshot.png" />
+			</div>
+		</div>
+		
+		<div class="row-fluid screenshot-container">
+			<div class="span6">
+				<h2>Infinite Questions</h2>
+				<div class="lead">
+				A game like 20 Questions, but with an infinite number of possibilities
+				</div>
+				<p>
+				Like 20 Questions, Infinite Questions asks a series of yes or no questions to the player about something they're thinking of so it can guess what it is.  Unlike 20 Questions, when the player outsmarts the computer, the game learns from its loss.
+				</p>
+			</div>
+			<div class="span6 app-screenshot">
+				<img src="assets/NQuestionsGameScreenshot.png" />
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+<div class="bottombar noprint">
+	<h7>A Jared Pochtar Production<h7>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+	<!-- Start of StatCounter Code for Default Guide -->
+	<script type="text/javascript">
+		var sc_project=8417641; 
+		var sc_invisible=1; 
+		var sc_security="5c66c714"; 
+		var scJsHost = (("https:" == document.location.protocol) ?
+						"https://secure." : "http://www.");
+		document.write("<sc"+"ript type='text/javascript' src='" +
+					   scJsHost +
+					   "statcounter.com/counter/counter.js'></"+"script>");</script>
+	<noscript><div class="statcounter"><a title="web analytics"
+		href="http://statcounter.com/" target="_blank"><img
+			class="statcounter"
+			src="https://c.statcounter.com/8417641/0/5c66c714/1/"
+			alt="web analytics"></a></div></noscript>
+	<!-- End of StatCounter Code for Default Guide -->
+	
+
+</div>
+</body>
+</html>
