@@ -40,6 +40,12 @@ h4 {
 	margin-bottom: 2em;
 }
 
+@media print {
+	.unit {
+		margin-bottom: 1.7em;
+	}	
+}
+
 .school-logo {
 	height: 1.2em;
 }
@@ -48,6 +54,14 @@ h4 {
 	display: inline-block;
 	text-align: center;
 	width: 1.2em;
+}
+
+.resume-item-body {
+	padding-left: 0em;
+}
+
+.no-margin {
+	margin: 0;
 }
 
 /*
@@ -328,11 +342,28 @@ h2 a {
 						<span class="logo-wrapper"><img src="assets/HarvardLogo.png" class="school-logo"/></span>
 						Harvard College
 					</h2>
-					<p>Class of 2017</p>
-					<div>				
-						<h4>Teaching Assistant <small>Fall 2013</small></h4>
+					<hr class="no-margin" />
+					<div class="resume-item-body">
+						<p>Class of 2017</p>
+						<div>				
+							<h4>CS50 Teaching Fellow <small>Fall 2013</small></h4>
+							<p>
+							Will hold section, grade homeworks, and hold office hours
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="unit">
+					<h2>
+						<span class="logo-wrapper"><img src="assets/PalantirLogo.png" class="school-logo"/></span>
+						Palantir Technologies
+					</h2>
+					<hr class="no-margin" />
+					<div class="resume-item-body">
+						<strong>Software Engineering Intern &#8212; Summer 2013</strong>
 						<p>
-						Will hold section, grade homeworks, and hold office hours for <em>CS50</em>
+						Built tools to port a large CoffeeScript codebase to TypeScript and led the port of the codebase; created interactive seating chart web app for hack week project
 						</p>
 					</div>
 				</div>
@@ -342,11 +373,11 @@ h2 a {
 						<span class="logo-wrapper"><img src="assets/HunterHighLogo.jpeg" class="school-logo"/></span>
 						Hunter College High School
 					</h2>
-					<p>
+					<hr class="no-margin" />
+					<div class="resume-item-body">
 						Class of 2013 <br/>
 						The below college work was completed while in high school
-					</p> 
-
+					</div> 
 				</div>
 
 				<div class="unit">
@@ -354,38 +385,40 @@ h2 a {
 						<span class="logo-wrapper"><img src="assets/ColumbiaLogo.png" class="school-logo"/></span>
 						Columbia University
 					</h2>
-					<table class="table table-condensed left-headed-table">
-						<col width="25%" />
-						<col width="69%" />
-						<col width="16%" />
-						
-						<tr>
-							<td>Fall 2012</td>
-							<td>Advanced Topics in Programming Languages and Compilers</td>
-							<td>A</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td>Advanced Software Engineering</td>
-							<td>A</td>
-						</tr>
+						<div class="resume-item-body">
+						<table class="table table-condensed left-headed-table">
+							<col width="25%" />
+							<col width="69%" />
+							<col width="16%" />
+							
+							<tr>
+								<td>Fall 2012</td>
+								<td>Advanced Topics in Programming Languages and Compilers</td>
+								<td>A</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>Advanced Software Engineering</td>
+								<td>A</td>
+							</tr>
 
-						<tr>
-							<td>Fall 2011</td>
-							<td>Programming Languages and Translators</td>
-							<td>A+</td>
-						</tr>
-					</table>
-					<div>				
-						<h4>Teaching Assistant <small>Fall 2012 and Spring 2013</small></h4>
-						<p>
-						Held office hours and graded homeworks and tests for <em>Programming Languages and Translators</em>, comprised of mostly graduate students
-						</p>
+							<tr>
+								<td>Fall 2011</td>
+								<td>Programming Languages and Translators</td>
+								<td>A+</td>
+							</tr>
+						</table>
+						<div>				
+							<h4>Teaching Assistant <small>Fall 2012 and Spring 2013</small></h4>
+							<p>
+							Held office hours and graded homeworks and tests for <em>Programming Languages and Translators</em>, comprised of mostly graduate students
+							</p>
 
-						<h4>Graduate-level researcher <small>Spring 2012 - Spring 2013</small></h4>
-						<p>
-						Research in compiling functional intermediate representations to hardware in collaboration with Professor Stephen Edwards, culminating in <em>"Compiling Away Recursion for Hardware."</em>
-						</p>
+							<h4>Graduate-level researcher <small>Spring 2012 - Spring 2013</small></h4>
+							<p>
+							Research in compiling functional intermediate representations to hardware in collaboration with Professor Stephen Edwards, culminating in <em>"Compiling Away Recursion for Hardware."</em>
+							</p>
+						</div>
 					</div>
 				</div>
 
@@ -395,52 +428,56 @@ h2 a {
 						<span class="logo-wrapper"><img src="assets/CMULogo.jpeg" class="school-logo"/></span>
 						Carnegie Mellon University
 					</h2>
-					<table class="table table-condensed left-headed-table">
-						<col width="25%" />
-						<col width="69%" />
-						<col width="16%" />
-						
-						<tr>
-							<td>Summer 2011</td>
-							<td>Concepts of Mathematics</td>
-							<td>A</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td>Principles of Economics</td>
-							<td>A</td>
-						</tr>
-					</table>
+					<div class="resume-item-body">
+						<table class="table table-condensed left-headed-table">
+							<col width="25%" />
+							<col width="69%" />
+							<col width="16%" />
+							
+							<tr>
+								<td>Summer 2011</td>
+								<td>Concepts of Mathematics</td>
+								<td>A</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>Principles of Economics</td>
+								<td>A</td>
+							</tr>
+						</table>
+					</div>
 				</div>
 				<div class="unit">
 					<h2>
 						<span class="logo-wrapper"><img src="assets/HunterCollegeLogo.jpg" class="school-logo"/></span>
 						Hunter College
 					</h2>
-					<table class="table table-condensed left-headed-table">
-						<col width="25%" />
-						<col width="69%" />
-						<col width="16%" />
-						<tr>
-							<td>Fall 2010</td>
-							<td>Computer Architecture III</td>
-							<td>A</td>
-						</tr>
-						<tr>
-							<td>Spring 2010</td>
-							<td>Computer Architecture II</td>
-							<td>A</td>
-						</tr>
-						<tr>
-							<td>Fall 2009</td>
-							<td/>Software Analysis and Design II</td>
-							<td>A+</td>
-						</tr>
-					</table>
+					<div class="resume-item-body">
+						<table class="table table-condensed left-headed-table">
+							<col width="25%" />
+							<col width="69%" />
+							<col width="16%" />
+							<tr>
+								<td>Fall 2010</td>
+								<td>Computer Architecture III</td>
+								<td>A</td>
+							</tr>
+							<tr>
+								<td>Spring 2010</td>
+								<td>Computer Architecture II</td>
+								<td>A</td>
+							</tr>
+							<tr>
+								<td>Fall 2009</td>
+								<td/>Software Analysis and Design II</td>
+								<td>A+</td>
+							</tr>
+						</table>
 
-					<div>
-						<h4>Teaching Assistant <small>Fall 2010</small></h4>
-						<p>Lectured and graded homeworks for <em>Software Analysis and Design I</em></p>
+						<div>
+							<h4>Teaching Assistant <small>Fall 2010</small></h4>
+							<p>Lectured and graded homeworks for <em>Software Analysis and Design I</em></p>
+						</div>
 					</div>
 				</div>
 
@@ -459,26 +496,15 @@ h2 a {
 			<div class="span6">
 				<div class="unit">
 					<h2>Computer Programming</h2>
-					Python/Django, Objective-C/Cocoa	<br />
-					C/C++, Haskell, OCaml, 				<br />
-					HTML/CSS/JavaScript, PHP, MySQL		<br />
-					MIPS/ARM, Bash, Java
+					JavaScript/Node, Python/Django 	<br />
+					C/C++, Objective-C/Cocoa				<br />
+					Haskell, OCaml, MIPS/ARM, Java	<br />
+					HTML/CSS, PHP, MySQL
 				</div>
 
 				<div class="unit">
 					<h2>Employment</h2>
-					<h4>
-						Palantir Technologies
-						<small>Summer 2013</small>
-					</h4>
-					Summer Software Engineering Intern
 
-					<h4>
-						Columbia University
-						<small>2012 - 2013</small>
-					</h4>
-					Researcher, Teaching Assistant
-					
 					<h4>
 						60East Technologies 
 						<small>2012 - 2013</small>
