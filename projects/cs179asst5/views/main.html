@@ -1,0 +1,102 @@
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li><input type="search" class="form-control"
+      role="search" placeholder="search..."
+      ng-model="searchText"/></li>
+  </ul>
+  <h3 class="text-muted">BookClub</h3>
+</div>
+
+<div class="books container">
+  <!-- orderByPriority lets us do the filter; ignore it otherwise -->
+  <div class="book row" ng-repeat="book in books | orderByPriority | filter:searchText">
+    <div class="col-xs-4 col-sm-4 text-right">
+      <img class="book-cover" ng-src="{{book.cover}}" />
+    </div>
+    <div class="col-xs-8 col-sm-8">
+      <div class="book-title">{{book.title}}</div>
+      <div ng-show="book.author" class="author">by {{book.author}}</div>
+
+      <div class="book-options">
+        <!-- delete button -->
+        <button type="button" class="btn btn-danger btn-sm"
+          ng-click="books.$remove(book.$id)">
+          <span class="glyphicon glyphicon-trash"></span> Remove
+        </button>
+
+        <!-- toggle comments button -->
+        <button type="button" class="btn btn-default btn-sm"
+          ng-hide="show_comments[book.$id]" ng-click="show_comments[book.$id]=true">
+          <span class="glyphicon glyphicon-comment"></span> Show Comments
+        </button>
+        <button type="button" class="btn btn-default btn-sm"
+          ng-show="show_comments[book.$id]" ng-click="show_comments[book.$id]=false">
+          <span class="glyphicon glyphicon-comment"></span> Hide Comments
+        </button>
+
+        <!-- favorite button -->
+        <button type="button" class="btn btn-default btn-sm"
+          ng-hide="book_is_favorite(book.$id)"
+          ng-click="book_set_favorite(book.$id, true)">
+          <span class="glyphicon glyphicon-star-empty"></span> Favorite
+        </button>
+        <button type="button" class="btn btn-success btn-sm"
+          ng-show="book_is_favorite(book.$id)"
+          ng-click="book_set_favorite(book.$id, false)">
+          <span class="glyphicon glyphicon-star"></span> Unfavorite
+        </button>
+      </div>
+
+      <div class="comments" ng-show="show_comments[book.$id]">
+        <p class="comment" ng-repeat="comment in book.comments|orderBy:'-time'">
+          {{comment.content}}
+        </p>
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <textarea type="text"
+              class="form-control"
+              ng-model="your_comment"
+              placeholder="Any thoughts on {{book.title}}?" />
+          </div>
+          <input
+            type="submit" class="btn btn-primary"
+            value="Add comment"
+            ng-disabled="!your_comment"
+            ng-click="addComment(your_comment, book); your_comment=''" />
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="row text-center">
+    <form class="form-inline" role="form">
+      <div class="form-group">
+        <input type="text"
+          class="form-control"
+          ng-model="newbook_title"
+          placeholder="New Book Title" />
+      </div>
+      <div class="form-group">
+        <input type="text"
+          class="form-control"
+          ng-model="newbook_author"
+          placeholder="J. Smith" />
+      </div>
+      <div class="form-group">
+        <input type="text"
+          class="form-control"
+          ng-model="newbook_cover"
+          placeholder="book cover url" />
+      </div>
+      <input
+        type="submit" class="btn btn-primary"
+        value="Add book"
+        ng-disabled="!newbook_title"
+        ng-click="addBook()" />
+    </form>
+  </div>
+</div>
+
+<div class="footer">
+  <p class="text-center">A Jared Pochtar Production</p>
+</div>
