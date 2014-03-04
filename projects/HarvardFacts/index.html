@@ -1,0 +1,172 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+	<style>
+
+	.card {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		background-color: black;
+		overflow: hidden;
+	}
+
+	.picture {
+		opacity: 0.8;
+
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	.centerer {
+		position: absolute;
+		top: 50%;
+	}
+
+	.content {
+		position: relative;
+		top: -150;
+
+		text-align: center;
+		color: white;
+		text-shadow: 2px 2px 2px black;
+		font-family: Helvetica, Arial, sans-serif;
+	}
+
+	.card-1 .picture {
+		background: url(widener.jpg) no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+
+	.card-2 .picture {
+		background: url(jhstatue.jpg) no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+
+	</style>
+</head>
+<body>
+
+<div class="card-holder">
+	<div class="card card-1">
+		<div class="picture">
+		</div>
+		<div class="centerer">
+			<h1 class="content">
+			Under the terms of the Widener family donation, the exterior of the library is never to be altered, or else ownership of the building reverts to the city of Cambridge
+			</h1>
+		</div>
+	</div>
+
+	<div class="card card-1">
+		<div class="picture">
+		</div>
+		<div class="centerer">
+			<h1 class="content">
+			Widener Library commemorates Harry Elkins Widener, who died on the Titanic.
+			</h1>
+		</div>
+	</div>
+
+	<div class="card card-1">
+		<div class="picture">
+		</div>
+		<div class="centerer">
+			<h1 class="content">
+			The Harvard University Library is the largest university library system in the world
+			</h1>
+		</div>
+	</div>
+
+	<div class="card card-2">
+		<div class="picture">
+		</div>
+		<div class="centerer">
+			<h1 class="content">
+				Rubbing John Harvard's foot brings you good luck!
+			</h1>
+		</div>
+	</div>
+
+	<div class="card card-2">
+		<div class="picture">
+		</div>
+		<div class="centerer">
+			<h1 class="content">
+				John Harvard did not found Harvard College
+			</h1>
+		</div>
+	</div>
+
+	<div class="card card-2">
+		<div class="picture">
+		</div>
+		<div class="centerer">
+			<h1 class="content">
+				John Harvard is not depicted in this statue
+			</h1>
+		</div>
+	</div>
+
+	<div class="card card-2">
+		<div class="picture">
+		</div>
+		<div class="centerer">
+			<h1 class="content">
+				Harvard was founded in 1636, not 1638 as the John Harvard statue says
+			</h1>
+		</div>
+	</div>
+
+	<div class="card card-2">
+		<div class="picture">
+		</div>
+		<div class="centerer">
+			<h1 class="content">
+				The John Harvard statue is also known as the statue of three lies
+			</h1>
+		</div>
+	</div>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="jquery.touchSwipe.min.js"></script>
+<script>
+
+var next_slide = function(){
+	var card = $(".card-holder .card").last();
+	card.hide('slide', {}, 400, function(){
+		card.prependTo(this.parentNode);
+		card.show();
+	});
+};
+
+$(".card").swipe({
+	swipeLeft: next_slide,
+	swipeRight: next_slide,
+	click: next_slide,
+
+	swipeUp: function() {
+		alert('share');
+	}
+});
+
+
+</script>
+
+</body>
+</html>
