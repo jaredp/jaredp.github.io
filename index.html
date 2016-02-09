@@ -107,7 +107,6 @@ h2 a {
 }
 
 #header {
-	background-image: url('assets/propic.png');
 	background-repeat: no-repeat;
 	background-position: left;
 
@@ -291,7 +290,7 @@ h2 a {
 
 <div class="printonly" id="printheader">
 	<h1 class="nopadding">Jared Pochtar</h1>
-	http://jaredp.github.io/ &sdot; jpochtar@gmail.com
+	http://jpochtar.me/ &sdot; jpochtar@gmail.com
 </div>
 
 <div class="navbar navbar-inverse navbar-fixed-top noprint" id="navbar">
@@ -485,6 +484,30 @@ h2 a {
 
 					<div class="unit">
 						<h2>
+							Krypton
+						</h2>
+						<hr class="no-margin" />
+						<div class="resume-item-body">
+							<strong>Software Engineering Intern &#8212; Summer 2015</strong>
+							<ul>
+								<li>
+								First college intern at rapidly growing venture backed startup.
+								</li>
+								<li>
+								Optimized performance of in-browser database-like system.
+								</li>
+								<li>
+								Integrated performance profiling infrastructure, enabling monitoring of performance so the team could get insight into our code's speed and optimize for it.  Included work across the software stack from integrating with graphing tool to digging into C++ v8 internals to fix a bug in the v8 profiler.
+								</li>
+								<li>
+								Designed and implemented query optimizer for our custom language.  Used the query optimizer to detect and convert users' database queries with equality joins to hashjoins, for orders of magnitude performance gains.
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="unit">
+						<h2>
 							<span class="logo-wrapper"><img src="assets/dropbox-logo.png" class="school-logo"/></span>
 							Dropbox
 						</h2>
@@ -496,13 +519,10 @@ h2 a {
 								Wrote a program for hack week to automatically insert type annotations into Python source code using dynamic type inference with Guido van Rossum.
 								</li>
 								<li>
-								Implemented interactions in a rich text editor so that images behave like they would on a native platform, especially in edge cases involving mice and keyboards.
+								First intern on <a href="https://www.dropbox.com/paper">Dropbox Paper</a>.  Implemented interactions with images so behavior matches native applications, especially in edge cases involving keyboard navigation.
 								</li>
 								<li>
 								Designed and implemented an architecture and policy for coordination of syncing documents where we have several different sync mechanisms to choose from, but have correctness invariants to maintain regarding which ones we can run given the state of the document and other factors.
-								</li>
-								<li class="hidden">
-								Helped the mailbox team pass arbitrary varargs in Objective-C [link to blog post].
 								</li>
 								<li>
 								Worked across the whole stack, writing Python, JavaScript, Objective-C, C++, and HTML/CSS/LESS
@@ -522,7 +542,7 @@ h2 a {
 							<p>
 							Designed and implemented Eclipse plugins to unify the development build system into Grunt.
 							</p>
-							<ul>
+							<ul class="noprint">
 								<li>Eclipse Grunt Plugin</li>
 								<li><a href="https://github.com/palantir/eclipse-less">Eclipse Less Build Plugin</a></li>
 							</ul>
@@ -532,7 +552,7 @@ h2 a {
 							<p>
 							Efficiently led the port of a large CoffeeScript codebase to TypeScript by designing and implementing automated tools to do the majority of the rote labor, then led the team on the remaining edge cases where nuanced understanding of the intent of the code was required because of semantics mismatches between the languages when used idiomatically.  In particular, adapted the CoffeeScript compiler to emit TypeScript.  Also created interactive seating chart web app for hack week.
 							</p>
-							<ul>
+							<ul class="noprint">
 								<li><a href="https://github.com/palantir/coffeescript-to-typescript">CoffeeScript to Typescript Transpiler</a></li>
 								<li><a href="https://github.com/palantir/reAddComments">Tool to copy CoffeeScript comments into compiled JavaScript</a></li>
 								<li><a href="https://github.com/palantir/backbone-typescript-accessor-generator">Typescript Backbone Model Generator</a></li>
