@@ -390,7 +390,10 @@ h2 a {
 							Integrated performance profiling infrastructure, enabling monitoring of performance so the team could get insight into our code's speed and optimize for it.  Included work across the software stack from integrating with graphing tool to digging into C++ v8 internals to fix a bug in the v8 profiler.
 							</li>
 							<li>
-							Designed and implemented query optimizer for our custom language.  Used the query optimizer to detect and convert users' database queries with equality joins to hashjoins, for orders of magnitude performance gains.
+							Designed and implemented query optimizer stage for formula language compiler.
+							</li>
+							<li>
+							Added pattern matching on equijoins to the optimizer, making this common operation <code>O(n+m)</code> instead of <code>O(nm)</code>.
 							</li>
 						</ul>
 					</div>
@@ -406,10 +409,10 @@ h2 a {
 						<strong>Software Engineering Intern &#8212; Summer 2014</strong>
 						<ul>
 							<li>
-							Wrote a program for hack week to automatically insert type annotations into Python source code using dynamic type inference with Guido van Rossum.
+							First intern on <a href="https://www.dropbox.com/paper">Dropbox Paper</a>.  Implemented interactions with images so behavior matches native applications, especially in edge cases involving keyboard navigation.
 							</li>
 							<li>
-							First intern on <a href="https://www.dropbox.com/paper">Dropbox Paper</a>.  Implemented interactions with images so behavior matches native applications, especially in edge cases involving keyboard navigation.
+							Turned <a href="https://github.com/python/mypy/tree/master/pinfer">pinfer.py</a> into a codemod which inserts type annotations into existing Python source code with Python creator <a href="https://mail.python.org/pipermail/python-ideas/2015-January/031381.html">Guido van Rossum</a>.
 							</li>
 							<li>
 							Designed and implemented an architecture and policy for coordination of syncing documents where we have several different sync mechanisms to choose from, but have correctness invariants to maintain regarding which ones we can run given the state of the document and other factors.
@@ -440,7 +443,7 @@ h2 a {
 					<div class="resume-item-body">
 						<strong>Software Engineering Intern &#8212; Summer 2013</strong>
 						<p>
-						Efficiently led the port of a large CoffeeScript codebase to TypeScript by designing and implementing automated tools to do the majority of the rote labor, then led the team on the remaining edge cases where nuanced understanding of the intent of the code was required because of semantics mismatches between the languages when used idiomatically.  In particular, adapted the CoffeeScript compiler to emit TypeScript.  Also created interactive seating chart web app for hack week.
+						Automated the port of a CoffeeScript codebase to TypeScript by forking the CoffeeScript compiler to emit TypeScript instead of JavaScript.  The port was originally planned to be done by hand, which would have cost a 20+ person team at least a week of dedicated time. Led the team on the remaining edge cases of semantics mismatches between the languages when used idiomatically.  Also created interactive seating chart web app for hack week.
 						</p>
 						<ul class="noprint">
 							<li><a href="https://github.com/palantir/coffeescript-to-typescript">CoffeeScript to Typescript Transpiler</a></li>
