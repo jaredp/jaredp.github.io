@@ -117,13 +117,16 @@ h2 a {
 	margin-top: 0;
 }
 
+.propic {
+	position: absolute;
+	height: 184px;
+	margin: 9px;
+	border-radius: 50%;
+	border: 5px solid white;
+	box-shadow: 0 0 1px #00000073;
+}
+
 #header {
-	background-image: url(/assets/propic.jpg);
-	background-size: contain;
-
-	background-repeat: no-repeat;
-	background-position: left;
-
 	padding-top: 5em;
 	padding-bottom: 2em;
 
@@ -311,36 +314,30 @@ h2 a {
 	http://jpochtar.me/ &sdot; jpochtar@gmail.com
 </div>
 
-<div class="navbar navbar-inverse navbar-fixed-top noprint" id="navbar">
-	<div class="navbar-inner">
-		<div class="container">
-			<a class="brand" href="#">Jared Pochtar</a>
-			<ul class="nav">
-				<li><a href="#Education">Education</a></li>
-				<li><a href="#Research">Research</a></li>
-				<li><a href="#Apps">Apps</a></li>
-				<li><a href="#Games">Games</a></li>
-			</ul>
-		</div>
-	</div>
-</div>
 
-<div class="hero noprint">
+<div class="noprint" style="background: #eaeaea">
 	<div class="container">
-		<div class="hero-unit" id="header">
-			<h1>Jared Pochtar</h1>
-			<div>
-				<a href="mailto:jared@pagedraw.io">
-					jared@pagedraw.io
-				</a>
-				<span style="margin: 0.3em; color: rgba(0,0,0,0.2); font-size: 0.5em; vertical-align: middle">&bull;</span>
-				<a href="https://github.com/jaredp">
-					jaredp on GitHub
-				</a>
-				<span style="margin: 0.3em; color: rgba(0,0,0,0.2); font-size: 0.5em; vertical-align: middle">&bull;</span>
-				<a href="https://www.linkedin.com/in/jared-pochtar-ab9426103/">
-					LinkedIn
-				</a>
+		<div class="row-fluid">
+			<div class="span6" style="position: relative">
+				<img class="propic" src="/assets/propic.jpg" />
+				<!-- spacer div for mobile width, to push down second column -->
+				<div style="width: 200px;height: 130px;"></div>
+			</div>
+			<div class="span6" id="header">
+				<h1>Jared Pochtar</h1>
+				<div>
+					<a href="mailto:jared@pagedraw.io">
+						jared@pagedraw.io
+					</a>
+					<span style="margin: 0.3em; color: rgba(0,0,0,0.2); font-size: 0.5em; vertical-align: middle">&bull;</span>
+					<a href="https://github.com/jaredp">
+						jaredp on GitHub
+					</a>
+					<span style="margin: 0.3em; color: rgba(0,0,0,0.2); font-size: 0.5em; vertical-align: middle">&bull;</span>
+					<a href="https://www.linkedin.com/in/jared-pochtar-ab9426103/">
+						LinkedIn
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -661,12 +658,10 @@ h2 a {
 
 <div class="section" id="Research">
 	<div class="container">
-		<h1>Research / Languages</h1>
+		<h2 style="text-align: center">
+			Programming Languages Research
+		</h2>
 		<hr />
-
-		<div class="lead">
-		I've always had an interest in languages &mdash; I like making tools, and what better tools to make than ones I can use everyday?
-		</div>
 
 		<div class="unit">
 			<h2>
@@ -767,7 +762,7 @@ h2 a {
 	</div>
 </div>
 
-<div class="section print-as-column" id="Apps">
+<div class="section print-as-column hidden" id="Apps">
 	<div class="container">
 		<h1>Apps</h1>
 		<hr />
@@ -880,7 +875,7 @@ h2 a {
 		-->
 	</div>
 </div>
-<div class="section print-as-column" id="Games">
+<div class="section print-as-column hidden" id="Games">
 	<div class="container">
 		<h1>Games</h1>
 		<hr />
@@ -955,7 +950,7 @@ h2 a {
 </div>
 
 <div class="bottombar noprint">
-	<h7>&copy; Jared Pochtar<h7>
+	<h7>Jared Pochtar 2017<h7>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
 	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
