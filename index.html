@@ -117,42 +117,6 @@ h2 a {
 	margin-top: 0;
 }
 
-.propic {
-	position: absolute;
-	height: 184px;
-	margin: 9px;
-	border-radius: 50%;
-	border: 5px solid white;
-	box-shadow: 0 0 1px #00000073;
-}
-
-#header {
-	padding-top: 5em;
-	padding-bottom: 2em;
-
-	text-align: right;
-}
-
-#header table {
-	float: right;
-}
-
-#header table tr td {
-	text-align: left;
-	padding-left: 10px;
-}
-
-.topbar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-}
-
-.topbar + .section {
-	margin-top: 12em;
-}
-
 .bottombar {
 	background-color: black;
 	text-align: center;
@@ -291,15 +255,45 @@ h2 a {
 
 }
 
-/* uncomment for appropriate padding with responsive
-@media (min-width: 976px) {
-*/
-	.navbar-fixed-top + div {
-		padding-top: 5em;
-	}
-/*
+.header {
+	background: #eaeaea;
 }
-*/
+
+.propic {
+	position: absolute;
+	height: 184px;
+	margin: 9px;
+	border-radius: 50%;
+	border: 5px solid white;
+	box-shadow: 0 0 1px #00000073;
+}
+
+.header-text {
+	padding-top: 5em;
+	padding-bottom: 2em;
+	text-align: right;
+}
+
+/* tablet + mobile: single column */
+@media (max-width: 767px) {
+	.header {
+		text-align: center;
+
+		/* make us full bleed.  No idea why bootstrap prevents this. */
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+
+	.propic {
+		position: static;
+	}
+
+	.header-text {
+		text-align: inherit;
+		padding: 0;
+		padding-bottom: 2em;
+	}
+}
 
 .hidden {
 	display: none;
@@ -315,15 +309,13 @@ h2 a {
 </div>
 
 
-<div class="noprint" style="background: #eaeaea">
+<div class="header noprint">
 	<div class="container">
 		<div class="row-fluid">
 			<div class="span6" style="position: relative">
 				<img class="propic" src="/assets/propic.jpg" />
-				<!-- spacer div for mobile width, to push down second column -->
-				<div style="width: 200px;height: 130px;"></div>
 			</div>
-			<div class="span6" id="header">
+			<div class="span6 header-text">
 				<h1>Jared Pochtar</h1>
 				<div>
 					<a href="mailto:jared@pagedraw.io">
