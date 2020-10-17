@@ -7,10 +7,11 @@
 
 <style>
 
-@import url('https://fonts.googleapis.com/css?family=Lato|Merriweather');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Merriweather:wght@400;700;900&display=swap');
 
 body {
 	font-family: 'Lato', "Helvetica Neue",Helvetica,Arial,sans-serif;
+	padding: 20px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -269,13 +270,21 @@ h2 a {
 	display: none;
 }
 
-
 .header {
 	background: #eaeaea;
+	min-height: calc(70vh - 100px);
+	margin-bottom: 100px;
+
+	display: flex; align-items: center; justify-content: center;
+	padding: 3em;
+
+	position: relative;
 }
 
 .propic {
 	position: absolute;
+	bottom: -100px;
+
 	height: 184px;
 	margin: 9px;
 	border-radius: 50%;
@@ -283,44 +292,6 @@ h2 a {
 	box-shadow: 0 0 1px #00000073;
 }
 
-.header-text {
-	padding-top: 56px;
-	padding-bottom: 2em;
-	text-align: right;
-}
-
-/* tablet + mobile: single column */
-@media (max-width: 767px) {
-	.header {
-		text-align: center;
-
-		/* make us full bleed.  No idea why bootstrap prevents this. */
-		margin-left: -20px;
-		margin-right: -20px;
-	}
-
-	.propic {
-		position: static;
-	}
-
-	.header-text {
-		text-align: inherit;
-		padding: 0;
-		padding-bottom: 2em;
-	}
-}
-
-.pagedraw-unit {
-	margin-top: 4em;
-	margin-bottom: 5em;
-
-	font-size: 16px;
-	line-height: 22px;
-}
-
-.pagedraw-unit h2 {
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-}
 
 </style>
 </head>
@@ -333,44 +304,50 @@ h2 a {
 
 
 <div class="header noprint">
-	<div class="container">
-		<div class="row-fluid">
-			<div class="span4 offset1" style="position: relative">
-				<img class="propic" src="/assets/propic.jpg" />
-			</div>
-			<div class="span6 header-text">
-				<h1 style="font-size: 4em;line-height: 1.2em;font-family: 'Helvetica Neue';">Jared Pochtar</h1>
+	<img class="propic" src="/assets/propic.jpg" />
 
-				<div>
-					jpochtar@gmail.com
-					<span style="margin: 0.3em; color: rgba(0,0,0,0.2); font-size: 0.5em; vertical-align: middle">&bull;</span>
-					<a href="https://twitter.com/jpochtar">Twitter</a>
-					<span style="margin: 0.3em; color: rgba(0,0,0,0.2); font-size: 0.5em; vertical-align: middle">&bull;</span>
-					<a href="https://medium.com/@jaredpochtar">Medium</a>
-					<span style="margin: 0.3em; color: rgba(0,0,0,0.2); font-size: 0.5em; vertical-align: middle">&bull;</span>
-					<a href="https://www.linkedin.com/in/jared-pochtar-ab9426103/">LinkedIn</a>
-					<span style="margin: 0.3em; color: rgba(0,0,0,0.2); font-size: 0.5em; vertical-align: middle">&bull;</span>
-					<a href="https://github.com/jaredp">Github</a>
-					<span style="margin: 0.3em; color: rgba(0,0,0,0.2); font-size: 0.5em; vertical-align: middle">&bull;</span>
-					<a href="https://news.ycombinator.com/user?id=jpochtar">HN</a>
-				</div>
-			</div>
+	<div style="text-align: center; z-index: 2; margin-bottom: 6em">
+		<h1 style="font-size: 4em;line-height: 1.2em;font-family: 'Helvetica Neue';margin-bottom: 0px">
+			Jared Pochtar
+		</h1>
+
+		<div style="margin-bottom: 40px">
+			I write code
+		</div>
+
+		<div>
+			<a href="https://twitter.com/jpochtar">Twitter</a>
+			<span style="margin: 0.3em; color: rgba(0,0,0,0.2); font-size: 0.5em; vertical-align: middle">&bull;</span>
+			<a href="https://medium.com/@jaredpochtar">Medium</a>
+			<span style="margin: 0.3em; color: rgba(0,0,0,0.2); font-size: 0.5em; vertical-align: middle">&bull;</span>
+			<a href="https://www.linkedin.com/in/jared-pochtar-ab9426103/">LinkedIn</a>
+			<span style="margin: 0.3em; color: rgba(0,0,0,0.2); font-size: 0.5em; vertical-align: middle">&bull;</span>
+			<a href="https://github.com/jaredp">Github</a>
+			<span style="margin: 0.3em; color: rgba(0,0,0,0.2); font-size: 0.5em; vertical-align: middle">&bull;</span>
+			<a href="https://news.ycombinator.com/user?id=jpochtar">HN</a>
 		</div>
 	</div>
 </div>
 
 <div class="section" id="Education">
+	<h1 style="text-align: center">
+		Past
+	</h1>
+	<hr />
+
 	<div class="container">
 		<div class="row">
-			<div class="span10 offset1">
-				<div class="pagedraw-unit">
+			<div class="span12">
+				<div class="unit">
 					<h2>
-						<span class="logo-wrapper"><img src="assets/pagedraw-logo.png" class="school-logo"/></span>
-						<span class="organization-name"><a href="https://pagedraw.io/">Pagedraw</a></span>
+						<a href="https://pagedraw.io">
+							<span class="logo-wrapper"><img src="assets/pagedraw-logo.png" class="school-logo"/></span>
+							<span class="organization-name">Pagedraw</span>
+						</a>
 					</h2>
 					<hr class="no-margin" />
 					<div class="resume-item-body">
-						<p><strong>Founder and CEO</strong></p>
+						<p><strong>Founder/CEO &#8212; 2016-2018</strong></p>
 						<p>Pagedraw is a platform for productionizing Sketch designs into React code.  You import a Sketch file, mark in Pagedraw how it should resize and reflow, then we generate React JSX and CSS you can wire into your backend.</p>
 
 						<p>Pagedraw writes code like I would write by hand.  It's just JSX and CSS, no special libraries or frameworks required.  You can drop React components made in Pagedraw into an existing React app alongside your handwritten React components, and you can use your existing React component libraries in Pagedraw.</p>
@@ -381,10 +358,6 @@ h2 a {
 			</div>
 		</div>
 
-		<h1 style="text-align: center">
-			Past
-		</h1>
-		<hr />
 		<div class="row-fluid">
 
 			<div class="span6">
