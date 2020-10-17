@@ -271,7 +271,10 @@ h2 a {
 }
 
 .header {
-	background: #eaeaea;
+    background: url('/backgrounds/paint.jpg');
+    color: black;
+    background-size: cover;
+
 	min-height: calc(70vh - 100px);
 	margin-bottom: 100px;
 
@@ -279,6 +282,10 @@ h2 a {
 	padding: 3em;
 
 	position: relative;
+}
+
+.header-text {
+	background: white;
 }
 
 .propic {
@@ -308,14 +315,14 @@ h2 a {
 
 	<div style="text-align: center; z-index: 2; margin-bottom: 6em">
 		<h1 style="font-size: 4em;line-height: 1.2em;font-family: 'Helvetica Neue';margin-bottom: 0px">
-			Jared Pochtar
+			<span class="header-text">Jared Pochtar</span>
 		</h1>
 
 		<div style="margin-bottom: 40px">
-			I write code
+			<span class="header-text">I write code</span>
 		</div>
 
-		<div>
+		<div><span class="header-text" style="padding: 0 8px">
 			<a href="https://twitter.com/jpochtar">Twitter</a>
 			<span style="margin: 0.3em; color: rgba(0,0,0,0.2); font-size: 0.5em; vertical-align: middle">&bull;</span>
 			<a href="https://medium.com/@jaredpochtar">Medium</a>
@@ -325,7 +332,7 @@ h2 a {
 			<a href="https://github.com/jaredp">Github</a>
 			<span style="margin: 0.3em; color: rgba(0,0,0,0.2); font-size: 0.5em; vertical-align: middle">&bull;</span>
 			<a href="https://news.ycombinator.com/user?id=jpochtar">HN</a>
-		</div>
+		</span></div>
 	</div>
 </div>
 
