@@ -5,6 +5,8 @@
 	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <script src="https://kit.fontawesome.com/9ae8a4318d.js" crossorigin="anonymous"></script>
+
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Merriweather+Sans:wght@300;400;600&display=swap');
@@ -299,6 +301,15 @@ h2 a {
 	box-shadow: 0 0 1px #00000073;
 }
 
+.ext-link-icon {
+	color: #AAA;
+	font-size: 16px;
+	margin-left: 0.5em;
+
+	/* bump it up 2px */
+	position: relative;
+	top: -2px;
+}
 
 </style>
 </head>
@@ -346,7 +357,7 @@ h2 a {
 	<div class="row">
 		<div class="span12">
 			<h4><a href="https://paper.dropbox.com/doc/Making-new-program-visualizations-with-Execution-Records--A9r9x4rVEfnQLCR3ImP4SZxrAg-FfPs2f1BX2DqRJ65Sasbx">
-				Exploring and debugging programs with "Execution Records"
+				Exploring and debugging programs with "Execution Records" <i class="fas fa-external-link-alt ext-link-icon"></i>
 			</a></h2>
 			<p>
 				To experiment with visualizations of program behavior (ie. make omniscient debuggers), it would be useful to have an easy to use datastructure representing a recording of a program. This project explores a representation that falls out of a lisp-style minimal language. It turns out to be quite natural, and embeds neat properties of programs. For example, it makes obvious that stack traces are really paths from the root to a leaf in a function call tree. One imagines program execution as a DFS of this function call tree, where the call "stack" is the frontier set. A natural visualization of this call tree turns out to be a flame graph. It also makes obvious that all dataflow into a function comes from either arguments or closure captures.
@@ -370,6 +381,7 @@ h2 a {
 						<a href="https://pagedraw.io">
 							<span class="logo-wrapper"><img src="assets/pagedraw-logo.png" class="school-logo"/></span>
 							<span class="organization-name">Pagedraw</span>
+							<i class="fas fa-external-link-alt ext-link-icon" style="top: 0px"></i>
 						</a>
 					</h2>
 					<hr class="no-margin" />
@@ -677,6 +689,7 @@ h2 a {
 			<h2>
 				<a href="assets/2013-pepm-recursion.pdf">
 				Research Paper: Compiling Away Recursion for Hardware
+				<i class="fas fa-external-link-alt ext-link-icon"></i>
 				</a>
 			</h2>
 			<div class="row-fluid">
@@ -700,6 +713,7 @@ h2 a {
 			<h2>
 				<a href="https://github.com/jaredp/PythonCompiler">
 				The P3 Compiler: Compiling Python to C++ to remove overhead
+				<i class="fas fa-external-link-alt ext-link-icon"></i>
 				</a>
 			</h2>
 
@@ -752,6 +766,7 @@ h2 a {
 					<h2>
 						<a href="https://medium.com/@jaredpochtar/call-any-super-classs-implementation-of-any-method-2100703b7399">
 						SuperMessenger
+						<i class="fas fa-external-link-alt ext-link-icon"></i>
 						</a>
 					</h2>
 					<p>
@@ -763,6 +778,7 @@ h2 a {
 					<h2>
 						<a href="https://medium.com/@jaredpochtar/c-switch-for-non-integers-98eed4031679">
 						JPObjectSwitch
+						<i class="fas fa-external-link-alt ext-link-icon"></i>
 						</a>
 					</h2>
 					<p>
