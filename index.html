@@ -7,7 +7,7 @@
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Merriweather:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Merriweather+Sans:wght@300;400;600&display=swap');
 
 body {
 	font-family: 'Lato', "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -15,7 +15,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Merriweather', "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: 'Merriweather Sans', sans-serif;
 }
 
 a {
@@ -330,12 +330,12 @@ h2 a {
 </div>
 
 <div class="section" id="Education">
-	<h1 style="text-align: center">
+	<div class="container">
+	<h1>
 		Past
 	</h1>
 	<hr />
 
-	<div class="container">
 		<div class="row">
 			<div class="span12">
 				<div class="unit">
@@ -641,8 +641,8 @@ h2 a {
 
 <div class="section" id="Research">
 	<div class="container">
-		<h1 style="text-align: center">
-			Programming Languages Research
+		<h1>
+			School Projects
 		</h1>
 		<hr />
 
@@ -700,46 +700,70 @@ h2 a {
 			</div>
 		</div>
 
-		<div class="row-fluid">
-			<div class="span7">
-				<h2>revenge-of-the-table</h2>
-				<p>
-				Project for Programming Languages and Translators
-				</p>
-				<p>
-				Revenge-of-the-table is a language designed to ease the use and manipulation of relational databases by allowing the programmer to view them in the object-oriented paradigm.  This is accomplished by compiling La Mesa code into Java code, with the appropriate SQL API calls, that will automatically translate object-oriented data structures into tables that can be stored in the database.  Similarly, the language will be able to query the database in a more natural way by allowing programmers to search for objects that meet certain criteria rather than manually querying across numerous tables to find a desired data point. This will allow programmers to forget the implementation details for storing their data in a relational database and permit them to focus on doing interesting things with the data.
-				</p>
+		<div class="unit">
+			<div class="row-fluid hidden">
+				<div class="span7">
+					<h2>revenge-of-the-table</h2>
+					<p>
+					Project for Programming Languages and Translators
+					</p>
+					<p>
+					Revenge-of-the-table is a language designed to ease the use and manipulation of relational databases by allowing the programmer to view them in the object-oriented paradigm.  This is accomplished by compiling La Mesa code into Java code, with the appropriate SQL API calls, that will automatically translate object-oriented data structures into tables that can be stored in the database.  Similarly, the language will be able to query the database in a more natural way by allowing programmers to search for objects that meet certain criteria rather than manually querying across numerous tables to find a desired data point. This will allow programmers to forget the implementation details for storing their data in a relational database and permit them to focus on doing interesting things with the data.
+					</p>
+				</div>
+
+				<div class="span5">
+					<h2>ast-pp</h2>
+					<p>
+					Ast-pp generates code for printing types defined in that OCaml file.  In Haskell, the type system permits a polymorphic function for converting objects to strings.  However in OCaml, this is not possible.  OCaml should, in my opinion, provide some built in facility, whether through automatic code generation or language-level mechanism, to print data structures, as this is essential for debugging programs.  Ast-pp remedies this omission by generating the code programmers would otherwise spend time writing to print data structures.  I wrote it to accelerate my work on revenge-of-the-table.
+					</p>
+				</div>
 			</div>
 
-			<div class="span5">
-				<h2>ast-pp</h2>
-				<p>
-				Ast-pp generates code for printing types defined in that OCaml file.  In Haskell, the type system permits a polymorphic function for converting objects to strings.  However in OCaml, this is not possible.  OCaml should, in my opinion, provide some built in facility, whether through automatic code generation or language-level mechanism, to print data structures, as this is essential for debugging programs.  Ast-pp remedies this omission by generating the code programmers would otherwise spend time writing to print data structures.  I wrote it to accelerate my work on revenge-of-the-table.
-				</p>
+			<div class="row-fluid">
+				<div class="span6">
+					<h2>
+						<a href="https://medium.com/@jaredpochtar/call-any-super-classs-implementation-of-any-method-2100703b7399">
+						SuperMessenger
+						</a>
+					</h2>
+					<p>
+					In Objective-C, you can only call an overridden implementation of a method from an immediate subclass of that method's class.  This works well to provide encapsulation, and based on the way super is handled, a super method implementation cannot be called from any but the immediate superclass (inheritance notwithstanding).  This is a good thing, as it would break large bits of encapsulation if subclasses could call arbitrary super implementations, or worse, if other objects could call super implementations of methods on foreign objects.
+					</p>
+				</div>
+
+				<div class="span6">
+					<h2>
+						<a href="https://medium.com/@jaredpochtar/c-switch-for-non-integers-98eed4031679">
+						JPObjectSwitch
+						</a>
+					</h2>
+					<p>
+					In C, and thus Objective-C, a switch statement only works with integers, and the case labels all need to be constant.  Strings seem like a natural thing to switch on, especially for command line interfaces.  Unfortunately, they cannot be reduced to integer constants, so we cannot use them.  Now that we have blocks in the language, we can create a dictionary where we associate any object, such as an NSString, with a block, and call the selected block after a simple dictionary lookup.
+					</p>
+				</div>
 			</div>
 		</div>
 
-		<div class="row-fluid">
-			<div class="span6">
-				<h2>
-					<a href="https://medium.com/@jaredpochtar/call-any-super-classs-implementation-of-any-method-2100703b7399">
-					SuperMessenger
-					</a>
-				</h2>
-				<p>
-				In Objective-C, you can only call an overridden implementation of a method from an immediate subclass of that method's class.  This works well to provide encapsulation, and based on the way super is handled, a super method implementation cannot be called from any but the immediate superclass (inheritance notwithstanding).  This is a good thing, as it would break large bits of encapsulation if subclasses could call arbitrary super implementations, or worse, if other objects could call super implementations of methods on foreign objects.
-				</p>
+		<div class="unit">
+			<div class="row-fluid">
+				<div class="span12">
+					<h2>Janky hardware</h2>
+					<p>
+						I seem to like making the jankiest possible hardware. There's something too modernist about technology we buy in a store, with the polished metal, plastic, and glass casing. It's just transistors connected by conductors, mounted on whatever. Tin foil and cardboard are satisfyingly brutalist materials for electronics.
+
+						Here are two very old projects from when I was in school (8th grade and sophomore year, respectively) made out of literal duct tape and tin foil.
+					</p>
+				</div>
 			</div>
 
-			<div class="span6">
-				<h2>
-					<a href="https://medium.com/@jaredpochtar/c-switch-for-non-integers-98eed4031679">
-					JPObjectSwitch
-					</a>
-				</h2>
-				<p>
-				In C, and thus Objective-C, a switch statement only works with integers, and the case labels all need to be constant.  Strings seem like a natural thing to switch on, especially for command line interfaces.  Unfortunately, they cannot be reduced to integer constants, so we cannot use them.  Now that we have blocks in the language, we can create a dictionary where we associate any object, such as an NSString, with a block, and call the selected block after a simple dictionary lookup.
-				</p>
+			<div class="row-fluid screenshot-container">
+				<div class="span6">
+					<iframe width="100%" height="315" src="https://www.youtube.com/embed/JI5iBDGPyVg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<div class="span6">
+					<iframe width="100%" height="315" src="https://www.youtube.com/embed/bSvS--U2F_I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -928,34 +952,28 @@ h2 a {
 				<img src="assets/NQuestionsGameScreenshot.png" />
 			</div>
 		</div>
-
 	</div>
 </div>
 
-<div class="bottombar noprint">
-	<h7>Jared Pochtar 2017<h7>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
-	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+	var sc_project=8417641;
+	var sc_invisible=1;
+	var sc_security="5c66c714";
+	var scJsHost = (("https:" == document.location.protocol) ?
+					"https://secure." : "http://www.");
+	document.write("<sc"+"ript type='text/javascript' src='" +
+				   scJsHost +
+				   "statcounter.com/counter/counter.js'></"+"script>");</script>
+<noscript><div class="statcounter"><a title="web analytics"
+	href="http://statcounter.com/" target="_blank"><img
+		class="statcounter"
+		src="https://c.statcounter.com/8417641/0/5c66c714/1/"
+		alt="web analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
 
-	<!-- Start of StatCounter Code for Default Guide -->
-	<script type="text/javascript">
-		var sc_project=8417641;
-		var sc_invisible=1;
-		var sc_security="5c66c714";
-		var scJsHost = (("https:" == document.location.protocol) ?
-						"https://secure." : "http://www.");
-		document.write("<sc"+"ript type='text/javascript' src='" +
-					   scJsHost +
-					   "statcounter.com/counter/counter.js'></"+"script>");</script>
-	<noscript><div class="statcounter"><a title="web analytics"
-		href="http://statcounter.com/" target="_blank"><img
-			class="statcounter"
-			src="https://c.statcounter.com/8417641/0/5c66c714/1/"
-			alt="web analytics"></a></div></noscript>
-	<!-- End of StatCounter Code for Default Guide -->
-
-
-</div>
 </body>
 </html>
